@@ -1,10 +1,14 @@
-import React from "react";
+import React from 'react';
+import Header from '../components/nav/header';
+import Bottom from '../components/nav/bottom';
+import Home from './home';
 
-// const API_END_POINT = 'https://api.themoviedb.org/3/';
-// const POPULAR_MOVIES_URL = 'discover/movie?language=fr&sort_by=popularity.desc&include_adult=false&append_to_response=images';
-// const API_KEY = 'api_key=934424955328116a494249554a384fe7';
-// const dbMovieApiKey = '934424955328116a494249554a384fe7';
-
-const App = () => <h1>Welcome Home</h1>;
+const App = () => (
+  <div>
+    <Header />
+    <Home />
+    <Bottom />
+  </div>
+);
 
 export default App;

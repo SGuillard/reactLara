@@ -17,5 +17,9 @@ use App\User;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
-
-Route::apiResource('products', 'ProductController');
+Route::group([
+    'middleware' => ['api', 'cors'],
+], function ($router) {
+    //Add you routes here, for example:
+    Route::apiResource('products', 'ProductController');
+});

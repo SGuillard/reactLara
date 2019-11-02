@@ -22,4 +22,5 @@ Route::group([
 ], function ($router) {
     //Add you routes here, for example:
     Route::apiResource('products', 'ProductController');
+    Route::apiResource('carts', 'CartController');
 });

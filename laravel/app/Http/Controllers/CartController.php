@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Resources\ProductResource;
+use App\Cart;
+use App\Http\Resources\CartResource;
 use App\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
-class ProductController extends Controller
+class CartController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,7 +17,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        return ProductResource::collection(Product::all());
+        $test = CartResource::collection(Cart::all());
+        return $test;
     }
 
     /**
@@ -37,7 +40,7 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        return Product::find(1);
+        //
     }
 
     /**

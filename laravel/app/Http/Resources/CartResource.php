@@ -14,10 +14,11 @@ class CartResource extends JsonResource
      */
     public function toArray($request)
     {
-
         return [
+            'id' => $this->id,
             'quantity' => $this->quantity,
-            'user' => new UserResource($this->user)
+            'user' => new UserResource($this->user),
+            'product' => new ProductResource($this->product)
         ];
     }
 }

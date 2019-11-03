@@ -1,18 +1,15 @@
 import React from 'react';
-import axios from 'axios';
+import ProductListItem from '../components/product-list-item';
 
-class ProductList extends React.Component {
-  constructor(props) {
-    console.log(props);
+const ProductList = ({ list }) => {
+  const getProductListItem = () => list.map(product => <ProductListItem key={product.id} product={product} />);
 
-    super(props);
-  }
-
-  render() {
-    return this.props.list.map(product => <div>{product.name}</div>);
-    // return 'ok';
-    // return <p>{this.state.productList.data.data[0].name}</p>;
-  }
-}
+  return (
+    <div className="col-lg-6">
+      <h4>Product List</h4>
+      <ul className="list-group">{getProductListItem()}</ul>
+    </div>
+  );
+};
 
 export default ProductList;
